@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bottomSheet"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_background">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/top"
+        android:layout_height="70dp"
+        android:text="Update Your Profile"
+        android:background="#e76f51"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pathRelative"
+        android:layout_below="@+id/top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/updateprofile"
+            android:gravity="center"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/pathRelative"
+        android:id="@+id/line1"
+        android:background="@color/browser_actions_divider_color"></View>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:paddingLeft="20dp"
+        android:layout_below="@id/line1"
+        android:id="@+id/Uname"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:layout_below="@+id/Uname"
+        android:id="@+id/Uaddress"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_regular"
+       />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Uaddress"
+        android:id="@+id/line2"
+        android:background="@color/browser_actions_divider_color"></View>
+
+
+    <Button
+        android:id="@+id/Usersubmit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_below="@id/line2"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/blue_fill__rounded_color"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Update"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:backgroundTint="#264653"
+        app:backgroundTintMode="src_in" />
+
+</RelativeLayout>

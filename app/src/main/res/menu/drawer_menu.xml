@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_addBook"
+            android:icon="@drawable/ic_addbook"
+            android:title="Add Book" />
+
+        <item
+            android:id="@+id/nav_mybook"
+            android:icon="@drawable/ic_mybook"
+            android:title="My book" />
+
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_msg"
+            android:title="Message" />
+
+    </group>
+
+
+    <item android:title="Profile">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_profile"
+                    android:title="Profile" />
+
+                <item
+                    android:id="@+id/nav_reset"
+                    android:icon="@drawable/password"
+                    android:title="Reset Password" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Communicate">
+
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_policy"
+                android:icon="@drawable/ic_baseline_group_24"
+                android:title="Policy" />
+        </menu>
+
+    </item>
+</menu>

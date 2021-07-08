@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewBookActivity"
+    android:background="#F8F5F5">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/bookadd"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/imageList_viewActivity"/>"
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/browser_actions_divider_color" />
+
+    <RelativeLayout
+        android:id="@+id/deltaRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/imageList_viewActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Book Name:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/BookName_viewActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:gravity="right"
+            android:justificationMode="inter_word"
+            android:text="Book Name"
+
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:layout_below="@id/BookName_viewActivity"
+            android:text="Book Category:"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:justificationMode="inter_word"
+            android:textSize="20sp"
+            android:layout_below="@id/BookName_viewActivity"
+            android:text="Book Category"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/BookCategory_viewActivity"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_below="@+id/BookCategory_viewActivity"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Book Price:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:justificationMode="inter_word"
+            android:layout_below="@+id/BookCategory_viewActivity"
+            android:textSize="20sp"
+
+            android:textStyle="bold"
+            android:text="Book Price"
+            android:textColor="@color/black"
+            android:id="@+id/BookPrice_viewActivity"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_below="@+id/BookPrice_viewActivity"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Book Owner:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:justificationMode="inter_word"
+            android:layout_below="@+id/BookPrice_viewActivity"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Book Owner"
+            android:textColor="@color/black"
+            android:id="@+id/BookOwner_viewActivity"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_below="@+id/BookOwner_viewActivity"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Phone Number:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:justificationMode="inter_word"
+            android:layout_below="@+id/BookOwner_viewActivity"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Phone Number"
+            android:textColor="@color/black"
+            android:id="@+id/BookPhone_viewActivity"/>
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/deltaRelative"
+        android:background="@color/black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/parentRelative"
+        android:layout_below="@+id/deltaRelative"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Be safe. Beware of fraud and scams"
+            android:textColor="@color/colorRed"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="17sp"></TextView>
+
+        <TextView
+            android:id="@+id/not"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/policy"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/top"
+            android:layout_marginRight="10dp"
+            android:justificationMode="inter_word"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"></TextView>
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/parentRelative"
+        android:layout_marginTop="10dp"
+        android:background="@color/black" />
+
+    <Button
+        android:id="@+id/gotochat"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parentRelative"
+        android:layout_marginTop="40dp"
+        android:foregroundGravity="left"
+        android:background="@drawable/blue_fill__rounded_color"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Chat With Owner"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:backgroundTint="#264653"></Button>
+
+    <ImageView
+        android:id="@+id/callOwner"
+        android:layout_width="100dp"
+        android:layout_height="49dp"
+        android:layout_below="@+id/parentRelative"
+        android:layout_marginLeft="350dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/blue_fill__rounded_color"
+        android:fontFamily="@font/poppins_medium"
+        android:src="@drawable/phone"
+        app:backgroundTint="#264653"></ImageView>
+
+
+</RelativeLayout>

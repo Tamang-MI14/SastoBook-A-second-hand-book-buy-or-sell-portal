@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="BookCategory">
+        <item name ="1">All Books</item>
+        <item name ="2">Classic</item>
+        <item name ="3">Fantasy</item>
+        <item name ="4">Finance</item>
+        <item name ="4">Si-Fi</item>
+
+    </string-array>
+</resources>

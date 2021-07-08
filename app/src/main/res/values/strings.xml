@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Sastobook</string>
+    <string name="navigation_draw_open">open navigation</string>
+    <string name="navigation_draw_close">open navigation</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <string name="text_with_paragraphs">
+        Welcome to hamrobazar.com ("Hamrobazar / Site"). By using Hamrobazar through website or from any electronic devices (like but not limited to mobile phone application), you acknowledge, understand and agree to following Terms of Use ("Terms").
+    </string>
+
+    <string name="three">
+ By posting or submitting any content to the Site, including any audio or visual files, classified advertisement or personal information (collectively, "Your Content"), during the registration, posting, through interactive public forums or any other feature of the Site you affirm, represent and warrant that
+    </string>
+    <string name="four">
+        (1) you lawfully own or have rights including the copyright, to Your Content
+    </string>
+    <string name="policy">SastoBook is NOT involved in transaction of any goods/services listed in the website. It is only platform to share information. You are directly contacting the person who has posted the advertisement and you agree not to hold Hamrobazar.com responsible for their act in any circumstances.</string>
+    <string name="payment">We strongly encourage you to take necessary precaution. Avoid advance payment, check goods before purchasing, instead of cash use mobile wallets (IME Pay, Esewa, Khalti, Connect Ips, etc) or bank transfer for payments.</string>
+    <string name="resetpassword">Forgot your Password No Worries! Reset your Password easily</string>
+    <string name="updateprofile">You Can Update Your Username And Current Address Here</string>
+    <string name="punchline">Get your book on very Reasonable price $ </string>
+
+</resources>

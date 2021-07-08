@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454185268505",
+    "project_id": "sastobook-demo",
+    "storage_bucket": "sastobook-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454185268505:android:e73d627732d7b865a74188",
+        "android_client_info": {
+          "package_name": "com.buyorsell.sastobook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454185268505-ichboogl29i3i332hjioaqbepfpibu8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa4ATn1i9tyoHTo9Zu8uv71E9-2F9-dT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454185268505-ichboogl29i3i332hjioaqbepfpibu8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

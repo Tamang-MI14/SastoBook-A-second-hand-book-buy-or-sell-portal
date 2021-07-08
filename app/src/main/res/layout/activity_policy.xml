@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer"
+    android:background="#F8F5F5"
+    tools:context=".PolicyActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:orientation="vertical"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E76F51"
+            android:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/menu"
+            app:titleTextColor="@color/white" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="194dp">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="383dp"
+                android:layout_height="189dp"
+
+                android:layout_centerHorizontal="true"
+                android:paddingTop="8dp"
+                android:src="@drawable/logo"></ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Terms Of Use and Policy"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/text_with_paragraphs"
+                android:layout_below="@+id/policy"
+                android:gravity="left"
+                android:padding="5dp"
+                android:justificationMode="inter_word"
+                android:textSize="15sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_with_paragraphs"
+                android:layout_below="@+id/one"
+                android:gravity="left"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:justificationMode="inter_word"
+                android:textSize="15sp">
+            </TextView>
+            <TextView
+                android:id="@+id/three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Submitted Content"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_below="@id/two"
+                android:textSize="20sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/three"
+                android:layout_below="@+id/three"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:padding="5dp"
+                android:justificationMode="inter_word"
+                android:textSize="15sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/four"
+                android:layout_below="@+id/four"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:justificationMode="inter_word"
+                android:textSize="15sp">
+            </TextView>
+            <TextView
+                android:id="@+id/six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/four"
+                android:layout_below="@+id/five"
+                android:gravity="left"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:justificationMode="inter_word"
+                android:textSize="15sp">
+            </TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
