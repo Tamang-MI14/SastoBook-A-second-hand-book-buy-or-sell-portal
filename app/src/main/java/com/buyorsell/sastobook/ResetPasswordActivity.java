@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,12 +20,19 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ResetPasswordActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     EditText userPassword, userConfPassword;
     Button resetBtn;
-    FirebaseUser user;
+    FirebaseUser user, firebaseUser;
+    FirebaseAuth firebaseAuth;
+    DatabaseReference UserRef;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
@@ -46,6 +54,8 @@ public class ResetPasswordActivity extends AppCompatActivity implements Navigati
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        View navView = navigationView.inflateHeaderView(R.layout.drawer_header);
+
         navigationView.setCheckedItem(R.id.nav_reset);
 
         userPassword = findViewById(R.id.reset_password);
@@ -54,6 +64,26 @@ public class ResetPasswordActivity extends AppCompatActivity implements Navigati
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         resetBtn = findViewById(R.id.reset_btn);
+
+        //FUNCTION for showing the name of logged in Users
+        TextView headername = navView.findViewById(R.id.header_username);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        UserRef = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        UserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String fullnamelabel = snapshot.child("username").getValue().toString();
+                headername.setText(fullnamelabel);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
         resetBtn.setOnClickListener(new View.OnClickListener() {

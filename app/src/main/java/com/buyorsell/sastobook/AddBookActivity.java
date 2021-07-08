@@ -19,14 +19,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -50,8 +54,10 @@ public class AddBookActivity extends AppCompatActivity implements NavigationView
     Spinner spinner;
     Boolean isImageAdded=false;
     FirebaseAuth firebaseAuth;
-    DatabaseReference Dataref, UserDataRef;
+    DatabaseReference Dataref, UserDataRef, UserRef;
     StorageReference StorageRef;
+
+    FirebaseUser firebaseUser;
 
 
 
@@ -74,6 +80,8 @@ public class AddBookActivity extends AppCompatActivity implements NavigationView
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        View navView = navigationView.inflateHeaderView(R.layout.drawer_header);
+
         navigationView.setCheckedItem(R.id.nav_addBook);
 
         imageViewAdd = findViewById(R.id.imageViewAdd);
@@ -89,6 +97,27 @@ public class AddBookActivity extends AppCompatActivity implements NavigationView
         StorageRef = FirebaseStorage.getInstance().getReference().child("BookImage");
 
 
+        //FUNCTION for showing the name of logged in Users
+        TextView headername = navView.findViewById(R.id.header_username);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        UserRef = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        UserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String fullnamelabel = snapshot.child("username").getValue().toString();
+                headername.setText(fullnamelabel);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         spinner = findViewById(R.id.category);
 
         List<String> categories = new ArrayList<>();
@@ -96,7 +125,6 @@ public class AddBookActivity extends AppCompatActivity implements NavigationView
         categories.add("Academic");
         categories.add("Si-Fi");
         categories.add("Comic");
-        categories.add("Fantasy");
         categories.add("Classic");
         categories.add("Finance");
         ArrayAdapter<String> dataAdapter;

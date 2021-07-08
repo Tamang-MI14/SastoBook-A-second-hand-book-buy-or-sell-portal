@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/ThemeOverlay.AppCompat.Dark"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
+    android:layout_height="wrap_content"
     android:background="#e76f51"
+    android:padding="25dp"
     android:orientation="vertical"
-    android:padding="25dp">
+    >
 
 
     <TextView
         android:id="@+id/header_username"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="34dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="20sp"
+        android:textColor="#264653"></TextView>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/punchline"
         android:textStyle="bold"
         android:fontFamily="@font/poppins_regular"
         android:textSize="20sp"
-        android:text="@string/punchline"
         android:textColor="#264653"></TextView>
 
-</RelativeLayout>
+
+</LinearLayout>

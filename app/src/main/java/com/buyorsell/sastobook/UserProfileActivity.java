@@ -44,7 +44,7 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
 
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, UserRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,37 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
 
 
         setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_draw_open, R.string.navigation_draw_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View navView = navigationView.inflateHeaderView(R.layout.drawer_header);
+
+        navigationView.setCheckedItem(R.id.nav_profile);
+
+
+        //FUNCTION for showing the name of logged in Users
+        TextView headername = navView.findViewById(R.id.header_username);
+
+        UserRef = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        UserRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String fullnamelabel = snapshot.child("username").getValue().toString();
+                headername.setText(fullnamelabel);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
 
@@ -112,15 +143,6 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                 startActivity(new Intent(getApplicationContext(), MyBookActivity.class));
             }
         });
-
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_draw_open, R.string.navigation_draw_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView.setNavigationItemSelectedListener(this);
-
-        navigationView.setCheckedItem(R.id.nav_profile);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
